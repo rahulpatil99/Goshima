@@ -131,7 +131,7 @@
             <span class="onoffswitch3-active">
                 <marquee class="scroll-text">
                     <?php
-                    $_con=mysqli_connect("localhost","u519790871_godb","Goshima@2019","u519790871_goshi");
+                    $_con=mysqli_connect("localhost","root","","u519790871_goshi");
                 $i=mysqli_query($_con,"SELECT * FROM notification where expire >= CURRENT_DATE() or status>1");
                 if(mysqli_num_rows($i)){
                     while($row=mysqli_fetch_assoc($i)){
@@ -190,7 +190,7 @@
       <h4>Upcoming Events</h4>
       <ul class="timeline">
           <?php
-            $_con=mysqli_connect("localhost","u519790871_godb","Goshima@2019","u519790871_goshi");
+            $_con=mysqli_connect("localhost","root","","u519790871_goshi");
             $i=mysqli_query($_con,"SELECT * FROM events where date > CURRENT_DATE()");
             while($row = mysqli_fetch_assoc($i)){
                 $date = explode(' ',date('d F Y', strtotime($row["date"])));

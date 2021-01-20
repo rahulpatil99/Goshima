@@ -70,7 +70,7 @@
               $dd=$_POST['date'];
             //   $query="select * from hallbook where b_year='$yy' and b_month='$mm' and b_day='$dd'";
             //   $query="select * from hallbook where d_date='$dd'";
-            $_con=mysqli_connect("localhost","u519790871_godb","Goshima@2019","u519790871_goshi");
+            $_con=mysqli_connect("localhost","root","","u519790871_goshi");
               $i = mysqli_query($_con,"SELECT * FROM hallbook WHERE b_date='$dd' AND status=1");
                 if(mysqli_num_rows($i)){
                     $c=0;
