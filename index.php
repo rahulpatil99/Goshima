@@ -256,9 +256,6 @@
     </div>
   </div>
 </div>
-
-
-
   
     <!-- Our Services Area -->
     <section class="our_services_area">
