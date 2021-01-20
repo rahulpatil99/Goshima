@@ -3,7 +3,8 @@
     session_start();
 if(isset($_POST["submit"]))
 {
-    $_con=mysqli_connect("localhost","u519790871_godb","Goshima@2019","u519790871_goshi");
+    // $_con=mysqli_connect("localhost","u519790871_godb","Goshima@2019","u519790871_goshi");
+    $_con=mysqli_connect("localhost","root","","u519790871_goshi");
  
 
     $username=$_POST["username"];

@@ -6,7 +6,7 @@ if(!(isset($_SESSION['username'])))
  header("location:adminlogin.php");
  
  }
- $_con=mysqli_connect("localhost","u519790871_godb","Goshima@2019","u519790871_goshi");
+ $_con=mysqli_connect("localhost","root","","u519790871_goshi");
  if(isset($_POST["add_noti"]))
 {
    $title = $_POST['heading'];
@@ -227,7 +227,7 @@ if(isset($_POST['delete_noti'])){
           <!--<div class="display_box">-->
           <?php
         //   display();
-                $_con=mysqli_connect("localhost","u519790871_godb","Goshima@2019","u519790871_goshi");
+        $_con=mysqli_connect("localhost","root","","u519790871_goshi");
                 $i=mysqli_query($_con,"SELECT * FROM notification ORDER BY noti_id DESC");
                 if(mysqli_num_rows($i)){
                   echo "<form action='anotification.php' method='post'>

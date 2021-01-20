@@ -10,7 +10,7 @@ if(!(isset($_SESSION['username'])))
  if(isset($_POST["confirm_book"])){
     $id = $_POST['confirm_book'];
    
-    $_con=mysqli_connect("localhost","u519790871_godb","Goshima@2019","u519790871_goshi");
+    $_con=mysqli_connect("localhost","root","","u519790871_goshi");
     $i=mysqli_query($_con,"UPDATE hallbook SET status=1 WHERE book_id=$id");
     $i=mysqli_query($_con,"SELECT SUM(b_slot) AS total_slot FROM hallbook WHERE status=1 AND b_date=(SELECT b_date FROM hallbook WHERE book_id=$id)");
     $row = mysqli_fetch_assoc($i); 
@@ -32,17 +32,17 @@ if(!(isset($_SESSION['username'])))
   }
   if(isset($_POST["unconfirm_book"])){
     $id = $_POST["unconfirm_book"];
-    $_con=mysqli_connect("localhost","u519790871_godb","Goshima@2019","u519790871_goshi");
+    $_con=mysqli_connect("localhost","root","","u519790871_goshi");
     $i=mysqli_query($_con,"UPDATE hallbook SET status=0 WHERE book_id=$id");
   }
   if(isset($_POST["cancel_book"])){
     $id = $_POST["cancel_book"];
-    $_con=mysqli_connect("localhost","u519790871_godb","Goshima@2019","u519790871_goshi");
+    $_con=mysqli_connect("localhost","root","","u519790871_goshi");
     $i=mysqli_query($_con,"UPDATE hallbook SET status=-1 WHERE book_id=$id");
   }
   if(isset($_POST["delete_book"])){
     $id = $_POST["delete_book"];
-    $_con=mysqli_connect("localhost","u519790871_godb","Goshima@2019","u519790871_goshi");
+    $_con=mysqli_connect("localhost","root","","u519790871_goshi");
     $i=mysqli_query($_con,"DELETE FROM hallbook WHERE book_id=$id");
   }
 ?>
@@ -113,7 +113,7 @@ if(!(isset($_SESSION['username'])))
     <div id="nconfirm" class="tab-pane fade in active">
       <h3>Pending Confirmation</h3>
       <?php
-                $_con=mysqli_connect("localhost","u519790871_godb","Goshima@2019","u519790871_goshi");
+                $_con=mysqli_connect("localhost","root","","u519790871_goshi");
                 $i=mysqli_query($_con,"SELECT * FROM hallbook WHERE status=0 AND b_date > CURDATE() ORDER BY b_date");
                 if(mysqli_num_rows($i)){
                   echo "
@@ -163,7 +163,7 @@ if(!(isset($_SESSION['username'])))
     <div id="confirm" class="tab-pane fade">
       <h3>Confirmation Completed By client</h3>
       <?php
-                $_con=mysqli_connect("localhost","u519790871_godb","Goshima@2019","u519790871_goshi");
+                $_con=mysqli_connect("localhost","root","","u519790871_goshi");
                 $i=mysqli_query($_con,"SELECT * FROM hallbook WHERE status=1 AND b_date> CURDATE() ORDER BY b_date");
                 if(mysqli_num_rows($i)){
                   echo "
@@ -213,7 +213,7 @@ if(!(isset($_SESSION['username'])))
     <div id="done" class="tab-pane fade">
       <h3>Completed Event</h3>
       <?php
-                $_con=mysqli_connect("localhost","u519790871_godb","Goshima@2019","u519790871_goshi");
+                $_con=mysqli_connect("localhost","root","","u519790871_goshi");
                 $i=mysqli_query($_con,"SELECT * FROM hallbook WHERE status>0 AND b_date< CURDATE() ORDER BY b_date");
                 if(mysqli_num_rows($i)){
                   echo "
@@ -259,7 +259,7 @@ if(!(isset($_SESSION['username'])))
     <div id="cancel" class="tab-pane fade">
       <h3>Cancel Registration</h3>
       <?php
-                $_con=mysqli_connect("localhost","u519790871_godb","Goshima@2019","u519790871_goshi");
+                $_con=mysqli_connect("localhost","root","","u519790871_goshi");
                 $i=mysqli_query($_con,"SELECT * FROM hallbook WHERE (status<1 AND b_date< CURDATE()) OR status=-1 ORDER BY b_date");
                 if(mysqli_num_rows($i)){
                   echo "

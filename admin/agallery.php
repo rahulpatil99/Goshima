@@ -6,7 +6,7 @@ if(!(isset($_SESSION['username'])))
  header("location:adminlogin.php");
  
  }
- $_con=mysqli_connect("localhost","u519790871_godb","Goshima@2019","u519790871_goshi");
+ $_con=mysqli_connect("localhost","root","","u519790871_goshi");
  if(isset($_POST["add_gallery"]))
 {
    $file_n = $_FILES['fileToUpload1']['name'];
@@ -221,7 +221,7 @@ if(isset($_POST['delete_gallery'])){
           <?php
         //   <form action='aevents.php' method='post'>
         //   display();
-                $_con=mysqli_connect("localhost","u519790871_godb","Goshima@2019","u519790871_goshi");
+        $_con=mysqli_connect("localhost","root","","u519790871_goshi");
                 $i=mysqli_query($_con,"SELECT * FROM gallery ORDER BY id DESC");
                 if(mysqli_num_rows($i)){
                   echo " <form action='agallery.php' method='post'>

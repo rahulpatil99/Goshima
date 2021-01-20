@@ -175,7 +175,7 @@
         <div class="featured_gallery">
             
             <?php
-                $_con=mysqli_connect("localhost","u519790871_godb","Goshima@2019","u519790871_goshi");
+                $_con=mysqli_connect("localhost","root","","u519790871_goshi");
                 $i=mysqli_query($_con,"SELECT * FROM gallery");
                 if(mysqli_num_rows($i)){
                     $count = 0;

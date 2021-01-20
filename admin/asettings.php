@@ -119,7 +119,7 @@ if(isset($_SESSION['username']))
        $oldpass=$_POST["oldpassword"];
         $enoldpass=md5($oldpass);
         
-        $_con=mysqli_connect("localhost","u519790871_godb","Goshima@2019","u519790871_goshi");
+        $_con=mysqli_connect("localhost","root","","u519790871_goshi");
         
         $result=mysqli_query($_con, "select *from admin where username='$user' and password='$enoldpass'");
         $row = mysqli_fetch_array($result,MYSQLI_ASSOC);

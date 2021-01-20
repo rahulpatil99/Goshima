@@ -9,7 +9,7 @@
                  $P_date = $_POST['p_date'];
                  $P_slot =$_POST['p_slot'];
               
-                $_con=mysqli_connect("localhost","u519790871_godb","Goshima@2019","u519790871_goshi");
+                 $_con=mysqli_connect("localhost","root","","u519790871_goshi");
                 $query="insert into hallbook(b_name,b_event,b_email,b_mobile,b_date,b_slot,status) values('$P_name','$P_event','$P_email','$P_mobile','$P_date','$P_slot','0')";
                 $r = mysqli_query($_con,$query);
                 if($r){ 

@@ -4,7 +4,7 @@ if(!(isset($_SESSION['username'])))
 {
  header("location:adminlogin.php");
  }
- $_con=mysqli_connect("localhost","u519790871_godb","Goshima@2019","u519790871_goshi");
+ $_con=mysqli_connect("localhost","root","","u519790871_goshi");
  
  if(isset($_POST["add_ad"]))
 {
@@ -271,7 +271,7 @@ if(isset($_POST['disable_ad'])){
           <!--<div class="display_box">-->
         
           <?php
-            $_con=mysqli_connect("localhost","u519790871_godb","Goshima@2019","u519790871_goshi");
+            $_con=mysqli_connect("localhost","root","","u519790871_goshi");
             $i=mysqli_query($_con,"SELECT * FROM ads");
             if(mysqli_num_rows($i)){
               echo "<form action='aads.php' method='post'>

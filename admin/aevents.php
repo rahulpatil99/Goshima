@@ -4,7 +4,7 @@ if(!(isset($_SESSION['username'])))
 {
  header("location:adminlogin.php");
  }
- $_con=mysqli_connect("localhost","u519790871_godb","Goshima@2019","u519790871_goshi");
+ $_con=mysqli_connect("localhost","root","","u519790871_goshi");
  if(isset($_POST["add_event"]))
 {
   $file_n = $_FILES['fileToUpload1']['name'];
@@ -233,7 +233,7 @@ if(isset($_POST['delete_event'])){
           <!--  show event data here-->
           <!--<div class="display_box">-->
           <?php
-                $_con=mysqli_connect("localhost","u519790871_godb","Goshima@2019","u519790871_goshi");
+                $_con=mysqli_connect("localhost","root","","u519790871_goshi");
                 $i=mysqli_query($_con,"SELECT * FROM events ORDER BY event_id DESC");
                 if(mysqli_num_rows($i)){
                   echo "

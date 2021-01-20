@@ -5,7 +5,7 @@ if(!(isset($_SESSION['username'])))
  header("location:adminlogin.php");
  }
  
- $_con=mysqli_connect("localhost","u519790871_godb","Goshima@2019","u519790871_goshi");
+ $_con=mysqli_connect("localhost","root","","u519790871_goshi");
  
  if(isset($_POST["add_file"]))
 {
@@ -28,7 +28,7 @@ if(!(isset($_SESSION['username'])))
 
 
 if(isset($_POST['delete_file'])){
-    $_con=mysqli_connect("localhost","u519790871_godb","Goshima@2019","u519790871_goshi");
+  $_con=mysqli_connect("localhost","root","","u519790871_goshi");
     $d_id = $_POST['delete_file'];
     // echo "<script>alert(ok);</script>";
     $d_category = $POST['category'];
@@ -254,7 +254,7 @@ if(isset($_POST['delete_file'])){
           </form>      
         
           <?php
-                $_con=mysqli_connect("localhost","u519790871_godb","Goshima@2019","u519790871_goshi");
+                $_con=mysqli_connect("localhost","root","","u519790871_goshi");
                 $i=mysqli_query($_con,"SELECT * FROM file where category ='vartapatra' ORDER BY file_id DESC");
                 if(mysqli_num_rows($i)){
                   echo "
@@ -312,7 +312,7 @@ if(isset($_POST['delete_file'])){
           </form>      
         
           <?php
-                $_con=mysqli_connect("localhost","u519790871_godb","Goshima@2019","u519790871_goshi");
+                $_con=mysqli_connect("localhost","root","","u519790871_goshi");
                 $i=mysqli_query($_con,"SELECT * FROM file where category ='annual report' ORDER BY file_id DESC");
                 if(mysqli_num_rows($i)){
                   echo "

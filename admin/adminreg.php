@@ -30,7 +30,8 @@ if(isset($_POST["submit"]))
     
     // echo" ".$username;echo"<br><br>";
     
-     $_con=mysqli_connect("localhost","u519790871_godb","Goshima@2019","u519790871_goshi");
+    //  $_con=mysqli_connect("localhost","u519790871_godb","Goshima@2019","u519790871_goshi");
+    $_con=mysqli_connect("localhost","root","","u519790871_goshi");
     $i=mysqli_query($_con,"insert into admin(username,password,status) values('$username','$encpassword','active')");
     
     echo"<br><br>";
